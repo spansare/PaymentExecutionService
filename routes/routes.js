@@ -42,11 +42,14 @@ function populateDB() {
 // API Routes
 module.exports = function (app) {
 // Create an item
-app.post("/items", function(req, res) {
+app.post("/executePayment", function(req, res) {
 	var data = req.body;
 
 	if(Object.keys(data).length === 0){
 		return res.json({msg: "Body was empty."});
+	}
+	else {
+		return res.json({msg: "Payment executed successfully"});
 	}
 
 	/*db.insert(data, function (err, body, headers) {
