@@ -52,7 +52,7 @@ app.post("/executePayment", function(req, res) {
 		return res.json({msg: "Body was empty."});
 	}
 	else {
-		return res.json({msg: "Payment of $" + amount " from " + sender + " to " + receiver + " executed successfully"});
+		return res.json({msg: "Payment of $" + amount + " from " + sender + " to " + receiver + " executed successfully"});
 	}
 
 	/*db.insert(data, function (err, body, headers) {
