@@ -44,12 +44,15 @@ module.exports = function (app) {
 // Create an item
 app.post("/executePayment", function(req, res) {
 	var data = req.body;
-
+	var sender = data.sender;
+	var reciver = data.reciever;
+	var amount = data.amount;
+	
 	if(Object.keys(data).length === 0){
 		return res.json({msg: "Body was empty."});
 	}
 	else {
-		return res.json({msg: "Payment executed successfully"});
+		return res.json({msg: "Payment of $" + amount " from " + sender + " to " + reciver + " executed successfully"});
 	}
 
 	/*db.insert(data, function (err, body, headers) {
