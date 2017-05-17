@@ -1,7 +1,7 @@
 {
-  "name": "Microservices_CatalogAPI",
+  "name": "PaymentExecutionService",
   "version": "0.0.1",
-  "description": "A microservices sample catalog API.",
+  "description": "A microservices sample Payment Execution API.",
   "scripts": {
     "start": "node app.js"
   },
