@@ -5,8 +5,8 @@ let server = require('../app');
 let should = chai.should();
 chai.use(chaiHttp);
 
-describe('/POST executePayment', () => {
-    it('it should execute payment request', (done) => {
+describe('/POST executePayment', function() {
+    it('it should execute payment request', function(done) {
       let data = {
           sender: "John",
           receiver: "Mike",
@@ -15,7 +15,7 @@ describe('/POST executePayment', () => {
       chai.request("http://payment-execution-service.mybluemix.net")
           .post('/executePayment')
           .send(data)
-          .end((err, res) => {
+          .end(function(err, res) {
               res.should.have.status(200);
               //res.body.should.be.a('object');
         	  console.log(res.body);
