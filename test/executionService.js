@@ -25,3 +25,23 @@ describe('/POST executePayment', function() {
     });
 
 });
+
+describe('/POST validatePaymentInputs', function() {
+    it('it should validate payment request inputs', function(done) {
+      var data = {
+          sender: "John",
+          receiver: "Mike"
+      }
+      chai.request("https://payment-service-gateway.mybluemix.net/payment_execution_service")
+          .post('/executePayment')
+          .send(data)
+          .end(function(err, res) {
+              res.should.have.status(200);
+              //res.body.should.be.a('object');
+        	  console.log(res.body);
+              res.body.should.have.property('err');
+            done();
+          });
+    });
+
+});

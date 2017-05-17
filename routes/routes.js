@@ -51,9 +51,9 @@ app.post("/executePayment", function(req, res) {
 	console.log("Business Log : Execute Payment request received from : " + sender);
 	console.log("Application Log : Executing Payment request");
 	
-	if(Object.keys(data).length === 0){
+	if(Object.keys(data).length < 3){
 		console.error("Application Log : Invalid input parameters");
-		return res.json({msg: "Body was empty."});
+		return res.json({err: "Insufficient input parameters"});
 	}
 	else {
 		console.log("Application Log : Payment of $" + amount + " from " + sender + " to " + receiver + " executed successfully!!!")
